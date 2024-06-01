@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="array">Nhập mảng số nguyên</label>
+    <input type="text" id="array" placeholder="Nhập mảng số nguyên"><br><br>
+    <button onclick="reverseArray()">Đảo ngược mảng</button>
+    <p id="result"></p>
+    <script>
+        let numbers = [41, 20, 38, 93, 76, 47, 29, 14, 35];
+        document.write("Mảng nhập sau khi đảo ngược là: " + numbers.reverse().join(" - "))
+        function reverseArray(){
+            let input = document.getElementById("array").value;
+            let numbers = input.split(",").map(Number);//Chuyển đổi mảng chuỗi thành mảng số nguyên
+            numbers = numbers.reverse().join(" - ");
+            document.getElementById("result").innerHTML = "Mảng khởi tạo sau khi đảo ngược là: " + numbers;
+        }
+    </script>
+</body>
+
+</html>

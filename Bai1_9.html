@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Nối mảng</h3>
+    <label for="array1">Nhập mảng thứ nhất</label>
+    <input type="text" id="array1" placeholder="Nhập mảng"><br><br>
+    <label for="array2">Nhập mảng thứ hai</label>
+    <input type="text" id="array2" placeholder="Nhập mảng"><br><br>
+    <button onclick="getArray()">Nối mảng</button>
+    <p id="result"></p>
+    <script>
+        function getArray() {
+            let array1 = document.getElementById("array1").value;
+            let numbers1 = array1.split(",").map(Number);
+            let array2 = document.getElementById("array2").value;
+            let numbers2 = array2.split(",").map(Number);
+            if (numbers1.length !== 10) {
+                alert("Mảng thứ nhất phải có 10 phần tử. Hiện tại đang có " + numbers1.length + " phần tử!");
+                return;
+            }else if (numbers2.length !== 10) {
+                alert("Mảng thứ hai phải có 10 phần tử. Hiện tại đang có " + numbers2.length + " phần tử!");
+                return;
+            }
+            let numbers = numbers1.concat(numbers2);//Nối mảng
+            document.getElementById("result").innerHTML = "Mảng sau khi nối là: " + numbers.join(" - ");
+        }
+    </script>
+
+</body>
+
+</html>

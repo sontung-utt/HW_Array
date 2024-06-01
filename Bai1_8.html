@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Sắp xếp mảng số nguyên</h3>
+    <label for="array">Nhập mảng</label>
+    <input type="text" id="array" placeholder="Mảng"><br><br>
+    <button onclick="getArray()">Sắp xếp</button>
+    <p id="arr"></p>
+    <p id="result"></p>
+    <script>
+        function getArray(){
+            let array = document.getElementById("array").value;
+            let numbers = array.split(",").map(Number);
+            if(numbers.length!==10){
+                alert("Mảng phải có 10 phần tử. Hiện tại đang có "+numbers.length+" phần tử!");
+                return;
+            }
+            document.getElementById("arr").innerHTML = "Mảng vừa nhập là: "+numbers.join(", ");
+            
+            document.getElementById("result").innerHTML = "Mảng sắp xếp giảm dần: "+numbers.sort((a,b)=>b-a).join(", ");   
+        }
+    </script>
+
+</body>
+</html>

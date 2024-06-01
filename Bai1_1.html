@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let numbers = [12, 10, 4, 7, 2, 13, 17, 11, 2, 1];
+        document.write("Danh sách các phần tử trong mảng >=10<br>")
+        let count = 0;
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] >= 10) {
+                document.write(numbers[i] + "<br>");
+                count++;
+            }
+        }
+        document.write("Có " + count + " phần tử trong mảng >=10");
+    </script>
+</body>
+
+</html>

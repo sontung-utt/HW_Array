@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numbers = [12,43,65,92,56,29,37,81,74,78];
+        let sum=0;
+        let max = numbers[0];
+        for (let i=0; i<numbers.length; i++){
+            sum += numbers[i];
+            if(numbers[i]>max){
+                max=numbers[i];
+            }
+        }
+        sum = sum/numbers.length;
+        document.write("Giá trị lớn nhất trong mảng là: "+max+"<br>");
+        document.write("Trung bình cộng của các phần tử trong mảng là: " + sum);
+
+    </script>
+</body>
+</html>

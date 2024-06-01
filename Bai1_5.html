@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Đếm số nguyên âm trong mảng</h3>
+    <label for="num">Nhập mảng</label>
+    <input type="text" id="num" placeholder="Mảng"><br><br>
+    <button onclick="arrayCount()">Đếm số</button>
+    <p id="result"></p>
+    <script>
+        function arrayCount() {
+            let num = document.getElementById("num").value;
+            let numbers = num.split(",").map(Number);
+            let numbers1 = [];
+            let count = 0;
+            for (let i = 0; i < numbers.length; i++) {
+                if (numbers[i] < 0) {
+                    numbers1 = numbers.filter(value => value < 0);
+                    count++;
+                }
+            }
+            document.getElementById("result").innerHTML = "Số nguyên âm trong chuỗi là " + count + " với các số là: " + numbers1;
+        }
+    </script>
+</body>
+
+</html>

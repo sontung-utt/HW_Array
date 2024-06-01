@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let numbers = [1, 7, 5, 9, 2, 6, 7, 9, 7];
+        document.write("Các phần tử trong mảng: " + numbers.join(" - ") + "<br>");
+        document.write("Các phần tử chẵn trong mảng:<br>");
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 === 0) {
+                document.write(numbers[i] + "<br>");
+            }
+        }
+        document.write("Các phần tử tại vị trí chẵn trong mảng:<br>");
+        for (let i = 0; i < numbers.length; i++) {
+            if (i % 2 === 0) {
+                document.write(numbers[i] + " ở vị trí " + i + "<br>");
+            }
+        }
+        let num = +prompt("Nhập số");
+        let count = 0;
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] === num) {
+                console.log(num + " ở vị trí thứ " + i);
+                count++;
+            }
+        }
+        document.write("Số " + num + " xuất hiện " + count + " lần trong mảng");
+    </script>
+</body>
+
+</html>

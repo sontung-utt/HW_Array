@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let numbers = [12, 54, 243, 43, 98, 459, 34, 50, 95, 32, 54];
+        let max = numbers[0];
+        let maxIndex = 0;
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] > max) {
+                max = numbers[i];
+                maxIndex = i;
+            }
+        }
+        document.write("Phần tử lớn nhất trong mảng là: " + max + " tại vị trí thứ " + maxIndex);
+    </script>
+</body>
+
+</html>

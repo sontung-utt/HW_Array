@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Mảng số nguyên</h3>
+    <label for="array">Nhập mảng</label>
+    <input type="text" id="array" placeholder="Mảng"><br><br>
+    <label for="num">Nhập số bất kỳ</label>
+    <input type="text" id="num" placeholder="Nhập số"><br><br>
+    <button onclick="getResult()">Kiểm tra</button>
+    <p id="arr"></p>
+    <p id="result"></p>
+    <script>
+        function getResult() {
+            let array = document.getElementById("array").value;
+            let numbers = array.split(",").map(Number);
+            let num = document.getElementById("num").value;
+            num = parseInt(num);
+            if (numbers.length !== 10) {
+                alert("Mảng phải có 10 phần tử. Hiện tại đang có " + numbers.length + " phần tử");
+                return;
+            }
+            document.getElementById("arr").innerHTML = "Mảng vừa nhập là: " + numbers.join(", ");
+
+            for (let i = 0; i<numbers.length; i++){
+                if (numbers.includes(num)){
+                    numbers = numbers.filter(value => value !== num);
+                }
+            }
+            document.getElementById("result").innerHTML = "Mảng sau khi nhập số là: "+numbers.join(", ");
+
+        }
+    </script>
+</body>
+</html>
