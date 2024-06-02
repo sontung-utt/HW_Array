@@ -13,9 +13,9 @@
     <button onclick="reverseArray()">Đảo ngược mảng</button>
     <p id="result"></p>
     <script>
-        let numbers = [41, 20, 38, 93, 76, 47, 29, 14, 35];
-        document.write("Mảng nhập sau khi đảo ngược là: " + numbers.reverse().join(" - "))
-        function reverseArray(){
+        let numbers = [41, 20, 38, 93, 76, 47, 29, 14, 35];      
+        document.write("Mảng nhập sau khi đảo ngược là: " + numbers.reverse().join(" - "));
+        function reverseArray() {
             let input = document.getElementById("array").value;
             let numbers = input.split(",").map(Number);//Chuyển đổi mảng chuỗi thành mảng số nguyên
             numbers = numbers.reverse().join(" - ");

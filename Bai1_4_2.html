@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="array">Nhập mảng số nguyên</label>
+    <input type="text" id="array" placeholder="Nhập mảng số nguyên"><br><br>
+    <button onclick="reverseArray()">Đảo ngược mảng</button>
+    <p id="result"></p>
+    <script>
+        function reverseArray() {
+            let array = document.getElementById("array").value;
+            array = array.split(",").map(Number);
+            let arrReverse = [];
+            for (let i = array.length - 1; i >= 0; i--) {
+                arrReverse.push(array[i]);
+            }
+            document.getElementById("result").innerHTML = ("Mảng đảo ngược là: " + arrReverse.join(", "));
+        }
+
+    </script>
+</body>
+
+</html>
