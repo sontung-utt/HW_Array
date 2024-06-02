@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Tìm số lớn thứ 2 trong mảng</h3>
+    <label for="num">Nhập số phần tử</label>
+    <input type="text" id="num" placeholder="Nhập số"><br><br>
+    <label for="arr">Nhập mảng</label>
+    <input type="text" id="arr"><br><br>
+    <button onclick="getCheck()">Kiểm tra</button>
+    <p id="result"></p>
+    <script>
+        //Tìm phần tử lớn thứ 2 trong mảng
+        function getCheck() {
+            let num = document.getElementById("num").value;
+            num = parseInt(num);
+            let arr = document.getElementById("arr").value;
+            let numbers = arr.split(",").map(Number);
+            if (num !== numbers.length) {
+                alert("Mảng phải có " + num + " phần tử. Hiện tại đang có " + numbers.length + " phần tử!");
+                return;
+            }
+            let max = numbers[0];
+            for (let i = 0; i < numbers.length; i++) {
+                if (numbers[i] > max) {
+                    max = numbers[i];
+                }
+            }
+            console.log(max);
+            let arrSecond = numbers.filter(num => num !== max);
+            let secondMax = arrSecond[0];
+
+            console.log(arrSecond);
+            for (let i = 0; i < arrSecond.length; i++) {
+                if (arrSecond[i] > secondMax) {
+                    secondMax = arrSecond[i];
+                }
+            }
+            document.getElementById("result").innerHTML = "Số lớn thứ hai trong mảng là: " + secondMax;
+
+            //Cách 2
+            //Start
+            numbers.sort((a,b) => b-a);
+            console.log(numbers);
+            alert("Số lớn thứ hai trong mảng là: " + numbers[1]);
+            //end
+        }
+    </script>
+</body>
+
+</html>
